@@ -12,13 +12,13 @@ export default function OrderBook({ bids, asks }: HistoryBookType) {
           <Title align="center">
             <Text>Asks</Text>
           </Title>
-          <HistorySection records={bids?.records} ckey="taker" />
+          <HistorySection records={bids?.records} side="taker" />
         </Flex>
         <Flex direction="column" wrap="nowrap">
           <Title align="center">
             <Text>Bids</Text>
           </Title>
-          <HistorySection records={asks?.records} ckey="maker" />
+          <HistorySection records={asks?.records} side="maker" />
         </Flex>
       </Group>
     </>

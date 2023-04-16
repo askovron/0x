@@ -11,7 +11,7 @@ export type CryptoCurrencySelect = CryptoCurrency & {
   label: string;
 };
 
-export const list: CryptoCurrency[] = [
+export const list: CryptoCurrencySelect[] = [
   {
     chainId: 1,
     address: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',

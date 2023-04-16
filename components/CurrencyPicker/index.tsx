@@ -1,5 +1,5 @@
 import { Flex, Select } from '@mantine/core';
-import { CryptoCurrencySelect, list } from './currencies-list';
+import { list } from './currencies-list';
 import SelectOption from './select-option';
 
 export default function CurrencyPicker({
@@ -20,7 +20,7 @@ export default function CurrencyPicker({
         label="Source currency"
         placeholder="Pick source currency"
         itemComponent={SelectOption}
-        data={list.filter((currency) => to !== currency.address) as CryptoCurrencySelect[]}
+        data={list.filter((currency) => to !== currency.address)}
         value={from}
         onChange={(value) => fromChange(value)}
         searchable
@@ -36,7 +36,7 @@ export default function CurrencyPicker({
         label="Target currency"
         placeholder="Pick target currency"
         itemComponent={SelectOption}
-        data={list.filter((currency) => from !== currency.address) as CryptoCurrencySelect[]}
+        data={list.filter((currency) => from !== currency.address)}
         value={to}
         onChange={(value) => toChange(value)}
         searchable
