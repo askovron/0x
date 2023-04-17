@@ -34,18 +34,19 @@ export default function HistorySection({
     (currency) => currency.address === records?.[0]?.order[`${side}Token`]
   ) ?? { decimals: 0 };
 
-  const maxAmount: number = records.reduce(
-    (sum, { order: { [`${side}Amount` as 'takerAmount' | 'makerAmount']: amount } }) =>
-      sum + stringToCustomFloat(amount, decimals),
-    0
-  );
-  const color = getBaseColor(side);
-
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!records?.length) return <Alert color="gray">No records.</Alert>;
+
+  const maxAmount: number =
+    records.reduce(
+      (sum, { order: { [`${side}Amount` as 'takerAmount' | 'makerAmount']: amount } }) =>
+        sum + stringToCustomFloat(amount, decimals),
+      0
+    ) ?? 0;
+  const color = getBaseColor(side);
 
   return (
     <Transition
