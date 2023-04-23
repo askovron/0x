@@ -41,7 +41,7 @@ export default function HistorySection({
   if (!records?.length) return <Alert color="gray">No records.</Alert>;
 
   const maxAmount: number =
-    records.reduce(
+    records?.reduce(
       (sum, { order: { [`${side}Amount` as 'takerAmount' | 'makerAmount']: amount } }) =>
         sum + stringToCustomFloat(amount, decimals),
       0
