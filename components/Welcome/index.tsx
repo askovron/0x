@@ -21,7 +21,7 @@ export function Welcome({
       <Flex direction={{ base: 'row', md: 'column' }}>
         <Title className={classes.title} mt="md">
           <Text component={Flex} inherit variant="gradient">
-            The Risk Prot<ColorSchemeToggle />col
+            Crypt<ColorSchemeToggle /> exchange
           </Text>
         </Title>
       </Flex>
